@@ -13,7 +13,7 @@ export const middleware: NextMiddleware = async (request, event) => {
   // }
 
   const startTime = Date.now();
-  const pubLeuRes = await fetch('https://www.googleapis.com/identitytoolkit/v3/relyingparty/publicKeys', { next: { revalidate: 60 } })
+  const pubLeuRes = await fetch('https://www.googleapis.com/identitytoolkit/v3/relyingparty/publicKeys', { cache: 'force-cache' })
   const endTime = Date.now();
   console.log(endTime - startTime, "ms");
 
